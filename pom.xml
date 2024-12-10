@@ -3,6 +3,7 @@
   <groupId>com</groupId>
   <artifactId>New_Project_For_Docker</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  
   <dependencies>
 <!--  https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java  -->
 <dependency>
@@ -19,6 +20,7 @@
 </dependency>
 </dependencies>
   <build>
+  
 		<finalName>selenium-test</finalName>
 <plugins>
 <!--  Plugin to create a JAR  -->
@@ -27,6 +29,21 @@
 <artifactId>maven-jar-plugin</artifactId>
 <version>3.1.0</version>
 </plugin>
+<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>3.0.0-M5</version>
+				<configuration>
+					<suiteXmlFiles>
+						<suiteXmlFile>testng.xml</suiteXmlFile>
+					</suiteXmlFiles>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.13.0</version>
+			</plugin>
 </plugins>
 
 </build>
